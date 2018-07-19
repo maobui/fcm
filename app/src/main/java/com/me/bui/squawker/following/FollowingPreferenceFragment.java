@@ -41,6 +41,7 @@ public class FollowingPreferenceFragment extends PreferenceFragmentCompat implem
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        Log.d(TAG, "onSharedPreferenceChanged " + key);
         Preference preference = findPreference(key);
         if (preference != null && preference instanceof SwitchPreferenceCompat) {
             // Get the current state of the switch preference
