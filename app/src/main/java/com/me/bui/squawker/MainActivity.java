@@ -39,6 +39,8 @@ import com.me.bui.squawker.provider.SquawkProvider;
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
+
     private static String LOG_TAG = MainActivity.class.getSimpleName();
     private static final int LOADER_ID_MESSAGES = 0;
 
@@ -87,6 +89,10 @@ public class MainActivity extends AppCompatActivity implements
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null && extras.containsKey("test")) {
+            Log.d(TAG, "Contains : " + extras.getString("test"));
+        }
     }
 
     @Override
