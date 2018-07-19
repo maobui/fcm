@@ -19,24 +19,21 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
     // RecyclerView
     implementation 'com.android.support:recyclerview-v7:27.1.1'
-
     // Schematic dependencies for ContentProvider
-    annotationProcessor  'net.simonvt.schematic:schematic-compiler:0.7.0'
+    annotationProcessor 'net.simonvt.schematic:schematic-compiler:0.7.0'
     implementation 'net.simonvt.schematic:schematic:0.7.0'
-
     // Preferences Dependencies
     implementation 'com.android.support:preference-v7:27.1.1'
-
     // Firebase
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
-
 }
+
+apply plugin: 'com.google.gms.google-services'
