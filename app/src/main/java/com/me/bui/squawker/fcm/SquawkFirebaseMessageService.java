@@ -89,6 +89,7 @@ public class SquawkFirebaseMessageService extends FirebaseMessagingService{
      * @param data Map which has the message data in it
      */
     private void sendNotification(Map<String, String> data) {
+        Log.d(TAG, "sendNotification : " + data);
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         // Create the pending intent to launch the activity
